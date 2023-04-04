@@ -9,14 +9,14 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Second Page'),
+        title: Text(data),
       ),
       body: Center(
         child: Column(
           children: [
             Text(data),
             Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   child: const Text("Back"),
@@ -25,13 +25,9 @@ class SecondPage extends StatelessWidget {
                   },
                 ),
                 ElevatedButton(
-                  child: const Text("Next"),
+                  child: const Text("Third page"),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                const ThirdPage(data: 'Third Page')));
+                    Navigator.pushNamed(context, "third");
                   },
                 ),
               ],

@@ -9,23 +9,28 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First Page'),
+        title: Text(data),
       ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('First Page'),
-            ElevatedButton(
-                child: Text(data),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const SecondPage(data: 'Second Page')),
-                  );
-                }),
+            Text(data),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                    child: const Text("Second page"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "second");
+                    }),
+                ElevatedButton(
+                    child: const Text("Third page"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "third");
+                    }),
+              ],
+            ),
           ],
         ),
       ),
