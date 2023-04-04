@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ThirdPage extends StatelessWidget {
-  const ThirdPage({super.key});
+  final String data;
+  const ThirdPage({required this.data, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class ThirdPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            const Text('Third Page'),
+            Text(data),
             ElevatedButton(
               child: const Text("Back"),
               onPressed: () {

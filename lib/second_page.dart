@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'third_page.dart';
 
 class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+  final String data;
+  const SecondPage({required this.data, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class SecondPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            const Text('Second Page'),
+            Text(data),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -29,7 +30,8 @@ class SecondPage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ThirdPage()));
+                            builder: (context) =>
+                                const ThirdPage(data: 'Third Page')));
                   },
                 ),
               ],
