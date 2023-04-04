@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'third_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -14,11 +14,25 @@ class SecondPage extends StatelessWidget {
         child: Column(
           children: [
             const Text('Second Page'),
-            ElevatedButton(
-              child: const Text("Back"),
-              onPressed: () {
-                Navigator.pop(context);
-              },
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  child: const Text("Back"),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text("Next"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ThirdPage()));
+                  },
+                ),
+              ],
             ),
           ],
         ),
