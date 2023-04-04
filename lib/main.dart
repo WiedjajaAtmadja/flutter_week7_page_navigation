@@ -15,11 +15,11 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Page Navigation Demo",
       // home: FirstPage(data: 'First Page'),
-      initialRoute: 'first',
+      initialRoute: FirstPage.id,
       routes: {
-        'first': (context) => const FirstPage(data: 'First Page'),
-        'second': (context) => const SecondPage(data: 'Second Page'),
-        'third': (context) => const ThirdPage(data: 'Third Page'),
+        FirstPage.id: (context) => const FirstPage(data: 'First Page'),
+        SecondPage.id: (context) => const SecondPage(data: 'Second Page'),
+        ThirdPage.id: (context) => const ThirdPage(data: 'Third Page'),
       },
     );
   }

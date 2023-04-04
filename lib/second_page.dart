@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'third_page.dart';
 
 class SecondPage extends StatelessWidget {
+  static const id = "SecondPage";
   final String data;
   const SecondPage({required this.data, super.key});
 
@@ -27,7 +28,7 @@ class SecondPage extends StatelessWidget {
                 ElevatedButton(
                   child: const Text("Third page"),
                   onPressed: () {
-                    Navigator.pushNamed(context, "third");
+                    Navigator.pushNamed(context, ThirdPage.id);
                   },
                 ),
               ],
