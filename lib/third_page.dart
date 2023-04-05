@@ -22,7 +22,9 @@ class ThirdPage extends StatelessWidget {
                 ElevatedButton(
                     child: const Text("First page"),
                     onPressed: () {
-                      Navigator.pushNamed(context, FirstPage.id);
+                      // Navigator.pushNamed(context, FirstPage.id);
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, FirstPage.id, (route) => false);
                     }),
                 ElevatedButton(
                     child: const Text("Back"),
